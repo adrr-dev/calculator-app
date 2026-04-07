@@ -27,6 +27,9 @@ func main() {
 
 	mux := http.NewServeMux()
 
+	fileServer := http.FileServer(http.Dir("./static"))
+	mux.Handle("GET /static/", http.StripPrefix("/static/", fileServer))
+
 	mux.HandleFunc("GET /{$}", myHandling.RootHandler)
 	mux.HandleFunc("POST /key", myHandling.KeyHandler)
 	mux.HandleFunc("POST /enter", myHandling.EnterHandler)
