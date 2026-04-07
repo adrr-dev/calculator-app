@@ -2,7 +2,7 @@
   --bg: #1a1a1a;
   --panel: #262626;
   --text: #e0e0e0;
-  --accent: #d70000; /* ThinkPad red */
+  --accent: #d70000;
   --key-bg: #333333;
   --key-hover: #444444;
 }
@@ -52,6 +52,10 @@ body {
   gap: 10px;
 }
 
+#divide {
+  grid-column: span 2;
+}
+
 button {
   background: var(--key-bg);
   color: var(--text);
@@ -74,12 +78,14 @@ button:active {
   transform: translateY(1px);
 }
 
-/* Specific styling for the Enter button */
-button[hx-post="/enter"] {
+button[hx-post="/enter"],
+button[hx-post="/clear"] {
   background: var(--accent);
   font-weight: bold;
+  grid-column: span 2;
 }
 
-button[hx-post="/enter"]:hover {
+button[hx-post="/enter"]:hover, 
+button[hx-post="/clear"]:hover {
   filter: brightness(1.2);
 }

@@ -33,6 +33,7 @@ func main() {
 	mux.HandleFunc("GET /{$}", myHandling.RootHandler)
 	mux.HandleFunc("POST /key", myHandling.KeyHandler)
 	mux.HandleFunc("POST /enter", myHandling.EnterHandler)
+	mux.HandleFunc("POST /clear", myHandling.ClearHandler)
 
 	log.Fatal(http.ListenAndServe(":8080", mux))
 }

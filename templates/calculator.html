@@ -35,8 +35,11 @@
           <div id="row-4">
             <button type="submit" name="key" value="0">0</button>
             <button type="submit" name="key" value=".">.</button>
+            <button id="divide" type="submit" name="key" value="/">/</button>
+          </div>
+          <div id="row-5">
             <button type="submit" hx-post="/enter" hx-target="#calc-display">enter</button>
-            <button type="submit" name="key" value="/">/</button>
+            <button type="submit" hx-post="/clear" hx-target="#calc-display">clear</button>
           </div>
         </form>
       </div>

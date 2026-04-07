@@ -84,3 +84,19 @@ func (h Handling) EnterHandler(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 }
+
+func (h Handling) ClearHandler(w http.ResponseWriter, r *http.Request) {
+	display, err := h.Service.NewDisplay("")
+	if err != nil {
+		message := fmt.Sprintf("display not found: %e", err)
+		http.Error(w, message, http.StatusNotFound)
+		return
+	}
+
+	err = h.Fragment.ExecuteTemplate(w, "display.html", display)
+	if err != nil {
+		message := fmt.Sprintf("template not found: %e", err)
+		http.Error(w, message, http.StatusNotFound)
+		return
+	}
+}
