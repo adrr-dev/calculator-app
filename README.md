@@ -2,8 +2,4 @@
 
 a simple calculator app.
 
-personal note, not my proudest achievement as i tried to simplify the logic
-but after some wasted time i just decided to wing it.
-variable names, formatting, and even the fact i used a database rather than
-a single variable for the data was clunky.
-note css was done using AI; because of course it is.
+<img width="606" height="700" alt="image" src="https://github.com/user-attachments/assets/3a924c75-83dd-4526-b4e9-07aafbd515ed" />
